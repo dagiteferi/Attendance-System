@@ -14,39 +14,36 @@ if($_SESSION['name']!='oasis')
 
 <!-- head started -->
 <head>
-<title>Online Attendance Management System 1.0</title>
+
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../css/main.css">
 
 </head>
-<!-- head ended -->
-
-<!-- body started -->
-<body>
-
-<!-- Menus started-->
-<header>
-
-  <h1>Online Attendance Management System 1.0</h1>
-  <div class="navbar">
-  <a href="index.php">Home</a>
-  <a href="students.php">Students</a>
-  <a href="report.php">My Report</a>
-  <a href="account.php">My Account</a>
-  <a href="../logout.php">Logout</a>
-
-</div>
-
-</header>
-<!-- Menus ended -->
+<nav class="navbar">
+    <div class="inner-width">
+      <a href="index.html" class="logo"></a>
+      <button class="menu-toggler">
+        <span></span>
+        <span></span>  <!--nav bar for mobile view-->
+        <span></span>
+      </button>
+      <div class="navbar-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a><!--move to home-pagee about section-->
+        <a href="index.html#service">Services</a><!--move to home-pagee Services section-->
+        <a href="index.html#education">Education</a><!--move to home-pagee Education section-->
+        <a href="index.html#work">Works</a><!--move to home-pagee Works section-->
+        <a href="index.html#contact">Contact</a><!--move to home-pagee Contact section-->
+      </div>
+    </div>
+  </nav>
 
 <center>
 
 <!-- Content, Tables, Forms, Texts, Images started -->
 <div class="row">
     <div class="content">
-      <p>Be attentive and be regular :)</p>
-    <img src="../img/tcr.png" height="200px" width="300px" />
+      
 
   </div>
 

@@ -49,7 +49,7 @@ include('connect.php');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Online Attendance Management System 1.0</title>
+
 <meta charset="UTF-8">
   
   <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -75,13 +75,27 @@ include('connect.php');
 </head>
 <body>
 
-<header>
-
-  <h1>Online Attendance Management System 1.0</h1>
-
-</header>
+ <!-- Navbar -->
+ <nav class="navbar">
+    <div class="inner-width">
+      <a href="index.html" class="logo"></a>
+      <button class="menu-toggler">
+        <span></span>
+        <span></span>  <!--nav bar for mobile view-->
+        <span></span>
+      </button>
+      <div class="navbar-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a><!--move to home-pagee about section-->
+        <a href="index.html#service">Services</a><!--move to home-pagee Services section-->
+        <a href="index.html#education">Education</a><!--move to home-pagee Education section-->
+        <a href="index.html#work">Works</a><!--move to home-pagee Works section-->
+        <a href="index.html#contact">Contact</a><!--move to home-pagee Contact section-->
+      </div>
+    </div>
+  </nav>
 <center>
-<h1>Signup</h1>
+
 <div class="content">
 
   <div class="row">
@@ -90,65 +104,38 @@ include('connect.php');
     if(isset($error_msg)) echo $error_msg;
      ?>
     
-    <form method="post" class="form-horizontal col-md-6 col-md-offset-3">
-
-      <div class="form-group">
-          <label for="input1" class="col-sm-3 control-label">Email</label>
-          <div class="col-sm-7">
-            <input type="text" name="email"  class="form-control" id="input1" placeholder="your email" />
-          </div>
-      </div>
-
-      <div class="form-group">
-          <label for="input1" class="col-sm-3 control-label">Username</label>
-          <div class="col-sm-7">
-            <input type="text" name="uname"  class="form-control" id="input1" placeholder="choose username" />
-          </div>
-      </div>
-
-      <div class="form-group">
-          <label for="input1" class="col-sm-3 control-label">Password</label>
-          <div class="col-sm-7">
-            <input type="password" name="pass"  class="form-control" id="input1" placeholder="choose a strong password" />
-          </div>
-      </div>
-
-      <div class="form-group">
-          <label for="input1" class="col-sm-3 control-label">Full Name</label>
-          <div class="col-sm-7">
-            <input type="text" name="fname"  class="form-control" id="input1" placeholder="your full name" />
-          </div>
-      </div>
-
-      <div class="form-group">
-          <label for="input1" class="col-sm-3 control-label">Phone Number</label>
-          <div class="col-sm-7">
-            <input type="text" name="phone"  class="form-control" id="input1" placeholder="your phone number" />
-          </div>
-      </div>
-
-
-      <div class="form-group" class="radio">
-      <label for="input1" class="col-sm-3 control-label">Role</label>
-      <div class="col-sm-7">
-        <label>
-          <input type="radio" name="type" id="optionsRadios1" value="student" checked> Student
-        </label>
-            <label>
-          <input type="radio" name="type" id="optionsRadios1" value="teacher"> Teacher
-        </label>
-        
-      </div>
-      </div>
-
-      <input type="submit" class="btn btn-primary col-md-2 col-md-offset-8" value="Signup" name="signup" />
-    </form>
-  </div>
-    <br>
-    <p><strong>Already have an account? <a href="index.php">Login</a> here.</strong></p>
-
+    <div class="body">
+    <div class="continer">
+        <div class="card" id="card">
+            <div class="div1">
+                <h2>REGISTER</h2>
+                <form method="post" >
+                   
+                    <input type="text" name="email"  class="input" id="input1" placeholder="your email" required/>
+                    <input type="text" name="uname"  class="input" id="input1" placeholder="choose username" />
+                    
+                    <input type="password" name="pass"  class="input" id="input1" placeholder="choose a strong password" />
+                    <input type="text" name="fname"  class="input" id="input1" placeholder="your full name" />
+                    <input type="text" name="phone"  class="input" id="input1" placeholder="your id number" />
+                    <div class="form-group" class="radio">
+                        <label for="input1" class="">Role</label>
+                        
+                          
+                            <input type="radio" name="type" id="optionsRadios1" value="student" checked> Student
+                          
+                            <input type="radio" name="type" id="optionsRadios1" value="teacher"> Teacher
+                          </div>
+                    <button type="submit" class="submit-btn" name="signup" >Submit</button>
+                    
+                </form>
+                <a href="index.php">
+                    <button type="button" class="btn">I've an account</button>
+                </a>
+                
+            </div>
+        </div>
+    </div>
 </div>
-
 </center>
 
 </body>

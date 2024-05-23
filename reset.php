@@ -22,7 +22,7 @@
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
    
-  <link rel="stylesheet" href="styles.css" >
+
    
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -38,35 +38,45 @@
 
 </head>
 <body>
-
-<header>
-
-  <h1>Online Attendance Management System 1.0</h1>
-  <div class="navbar">
-  <a href="index.php">Login</a>
-
-</div>
-
-</header>
+ <!-- Navbar -->
+ <nav class="navbar">
+    <div class="inner-width">
+      <a href="index.html" class="logo"></a>
+      <button class="menu-toggler">
+        <span></span>
+        <span></span>  <!--nav bar for mobile view-->
+        <span></span>
+      </button>
+      <div class="navbar-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a><!--move to home-pagee about section-->
+        <a href="index.html#service">Services</a><!--move to home-pagee Services section-->
+        <a href="index.html#education">Education</a><!--move to home-pagee Education section-->
+        <a href="index.html#work">Works</a><!--move to home-pagee Works section-->
+        <a href="index.html#contact">Contact</a><!--move to home-pagee Contact section-->
+      </div>
+    </div>
+  </nav>
 
 <center>
 
-<div class="content">
-    <div class="row">
-
-    <form method="post" class="form-horizontal col-md-6 col-md-offset-3">
-    <h3>Recover your password</h3>
-
-      <div class="form-group">
-
-          <label for="input1" class="col-sm-2 control-label">Email</label>
-          <div class="col-sm-10">
-            <input type="email" name="email"  class="form-control" id="input1" placeholder="your email" />
-          </div>
-      </div>
-
-      <input type="submit" class="btn btn-primary col-md-2 col-md-offset-10" value="Go" name="reset" />
-    </form>
+<div class="body">
+    <div class="continer">
+        <div class="card"  id="card">
+            <div class="iner">
+                <div class="div1">
+                    <h2>Recover your password</h2>
+                    <form method="post" >
+                        <input type="email" name="email"  class="input" id="input1" placeholder="your email" required/>
+                      
+                        <input type="submit" class="submit-btn" value="Go" name="reset" />
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
       <br>
       <?php
