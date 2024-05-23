@@ -48,7 +48,7 @@
   .logo{
     width: 44px;
     height: 32px;
-    background-image: url(../images/logo.png);
+    background-image: url(../images/white-logo.png);
     background-repeat: no-repeat;
     background-size: contain;
   }
@@ -136,7 +136,7 @@ body {
     /* text-align: center;
     padding: 14px 20px;
     text-decoration: none; */
-} */
+/* }  */
 
 /* .navbar a:hover {
     background-color: #ddd;
@@ -153,8 +153,8 @@ body {
 .content {
     flex: 30%;
     background-color: white; /*#3e4651;*/
-    padding: 50px;
-} */
+    /* padding: 50px; */
+/* }  */
 /* select{
 
     font-size: 15px;
@@ -286,4 +286,74 @@ img{
   } 
   a:hover{
     color:#fff ;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media screen and (max-width: 653px){
+    .menu-toggler{
+      display: block;
+    }
+    .navbar-menu{
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      background-color: #353b48;
+      top: 0;
+      right: -100%;
+      max-width: 400px;
+      padding: 80px 50px;
+      transition: .3s linear;
+    }
+    .navbar-menu a{
+      display: block;
+      font-size: 30px;
+      margin: 30px 0;
+    }
+    .sticky .navbar-menu{
+      background-color: #f1f1f1;
+    }
+    .navbar-menu.active{
+      right: 0;
+    }
+    .menu-toggler.active span:nth-child(1){
+      transform: rotate(-45deg);
+      top: 4px;
+    }
+    .menu-toggler.active span:nth-child(2){
+      opacity: 0;
+    }
+    .menu-toggler.active span:nth-child(3){
+      transform: rotate(45deg);
+      bottom: 14px;
+    }
+    .inner-width{
+      max-width: 800px;
+    }
+    
+    .containerr{
+      flex: 100%;
+      text-align: center;
+    }
+    
   }
