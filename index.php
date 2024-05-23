@@ -5,48 +5,6 @@ if(isset($_POST['login']))
 	//start of try block
 
 	try{
-
-		//checking empty fields
-		if(empty($_POST['username'])){
-			throw new Exception("Username is required!");
-			
-		}
-		if(empty($_POST['password'])){
-			throw new Exception("Password is required!");
-			
-		}
-		//establishing connection with db and things
-		include ('connect.php');
-		
-		//checking login info into database
-		$row=0;
-		$result=mysql_query("select * from admininfo where username='$_POST[username]' and password='$_POST[password]' and type='$_POST[type]'");
-
-		$row=mysql_num_rows($result);
-
-		if($row>0 && $_POST["type"] == 'teacher'){
-			session_start();
-			$_SESSION['name']="oasis";
-			header('location: teacher/index.php');
-		}
-
-		else if($row>0 &&  $_POST["type"] == 'student'){
-			session_start();
-			$_SESSION['name']="oasis";
-			header('location: student/index.php');
-		}
-
-		else if($row>0 && $_POST["type"] == 'admin'){
-			session_start();
-			$_SESSION['name']="oasis";
-			header('location: admin/index.php');
-		}
-
-		else{
-			throw new Exception("Username,Password or Role is wrong, try again!");
-			
-			header('location: login.php');
-		}
 	}
 
 	//end of try block
@@ -62,29 +20,49 @@ if(isset($_POST['login']))
 <html>
 <head>
 
-	<title>Online Attendance Management System</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-	 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
-	 
-	<link rel="stylesheet" href="styles.css" >
-	 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+   
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+   
+  <link rel="stylesheet" href="styles.css" >
+   
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  <script src="javaScript/scripts.js"></script>  
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 	<center>
 
-<header>
 
-  <h1>Online Attendance Management System 1.0</h1>
 
-</header>
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="inner-width">
+	<a href="#home" class="logo"></a>
+	<button class="menu-toggler">
+	  <span></span>
+	  <span></span>
+	  <span></span>
+	</button>
+	<div class="navbar-menu">
+	  <a href="#home">Home</a>
+	  <a href="#about">About</a>
+	  
+	  <a href="#contact">Contact</a>
+	</div>
+  </div>
+</nav>
+
+
 
 <h1>Login</h1>
 
@@ -96,84 +74,30 @@ if(isset($error_msg))
 }
 ?>
 
-<!-- Old Version -->
-<!-- 
-<form action="" method="post">
-	
-	<table>
-		<tr>
-			<td>Username </td>
-			<td><input type="text" name="username"></input></td>
-		</tr>
-		<tr>
-			<td>Password</td>
-			<td><input type="password" name="password"></input></td>
-		</tr>
-		<tr>
-			<td>Role</td>
-			<td>
-			<select name="type">
-				<option name="teacher" value="teacher">Teacher</option>
-				<option name="student" value="student">Student</option>
-				<option name="admin" value="admin">Admin</option>
-			</select>
-			</td>
-		</tr>
-		<tr><td><br></td></tr>
-		<tr>
-			<td><button><input type="submit" name="login" value="Login"></input></button></td>
-			<td><button><input type="reset" name="reset" value="Reset"></button></td>
-		</tr>
-	</table>
-</form>
--->
+<div class="body">
+        <div class="continer">
+            <div class="card"  id="card">
+                <div class="iner">
+                    <div class="div1">
+                        <h2>LOGIN</h2>
+                        <form method="post">
+                            <input type="text" name="username"  class="input" id="input1" placeholder="your username" />
+                            <input type="password" name="password"  class="input" id="input1" placeholder="your password" />
+                            <label for="input1" class="col-sm-3 control-label">Role</label>
+                            <input type="radio" name="type" id="optionsRadios1" value="student" checked> Student
+                            <input type="radio" name="type" id="optionsRadios1" value="teacher"> Teacher
+                            <button type="submit" class="submit-btn" name="signup">Submit</button>
 
-<div class="content">
-	<div class="row">
-
-		<form method="post" class="form-horizontal col-md-6 col-md-offset-3">
-			<div class="form-group">
-			    <label for="input1" class="col-sm-3 control-label">Username</label>
-			    <div class="col-sm-7">
-			      <input type="text" name="username"  class="form-control" id="input1" placeholder="your username" />
-			    </div>
-			</div>
-
-			<div class="form-group">
-			    <label for="input1" class="col-sm-3 control-label">Password</label>
-			    <div class="col-sm-7">
-			      <input type="password" name="password"  class="form-control" id="input1" placeholder="your password" />
-			    </div>
-			</div>
-
-
-			<div class="form-group" class="radio">
-			<label for="input1" class="col-sm-3 control-label">Role</label>
-			<div class="col-sm-7">
-			  <label>
-			    <input type="radio" name="type" id="optionsRadios1" value="student" checked> Student
-			  </label>
-			  	  <label>
-			    <input type="radio" name="type" id="optionsRadios1" value="teacher"> Teacher
-			  </label>
-			  <label>
-			    <input type="radio" name="type" id="optionsRadios1" value="admin"> Admin
-			  </label>
-			</div>
-			</div>
-
-
-			<input type="submit" class="btn btn-primary col-md-3 col-md-offset-7" value="Login" name="login" />
-		</form>
-	</div>
-</div>
-
-
-
-<br><br>
-<p><strong>Have forgot your password? <a href="reset.php">Reset here.</a></strong></p>
-<p><strong>If you don't have any account, <a href="signup.php">Signup</a> here</strong></p>
-
+                        </form>
+                        <a href="signup.php">
+                            <button type="button" class="btn">If you are New</button>
+                        </a>
+                        <a href="reset.php">Forgot Password</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </center>
 </body>
 </html>

@@ -32,7 +32,7 @@ include('connect.php');
 </head>
 <body>
 
-<header>
+
 
   <!-- Navbar -->
   <nav class="navbar">
@@ -52,7 +52,7 @@ include('connect.php');
     </div>
   </nav>
 
-</header>
+
 <center>
 
                           
