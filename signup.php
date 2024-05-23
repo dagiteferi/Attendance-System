@@ -63,6 +63,15 @@ include('connect.php');
    
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <!--for the fabicons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <!--for my nav bar toggler works and background Change when scrol -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="javaScript/scripts.js"></script><!--my main JavaScript File Exernal JS-->
+    <!--to add a font-->  
+   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -80,52 +89,7 @@ include('connect.php');
     if(isset($success_msg)) echo $success_msg;
     if(isset($error_msg)) echo $error_msg;
      ?>
-    <!-- Old version started -->
-    <!--<form action="" method="post">
-      
-      <table>
-        
-        <tr>
-          <td>Email</td>
-          <td><input type="text" name="email"></td>
-        </tr>
-        <tr>
-          <td>Username</td>
-          <td><input type="text" name="uname"></td>
-
-        </tr>
-        <tr>
-          <td>Password</td>
-          <td><input type="Password" name="pass"></td>
-        </tr>
-
-        <tr>
-          <td>Full Name</td>
-          <td><input type="text" name="fname"></td>
-        </tr>
-
-        <tr>
-          <td>Phone Number</td>
-          <td><input type="text" name="phone"></td>
-        </tr>
-
-        <tr>
-          <td>Type</td>
-          <td>      <select name="type">
-        <option name="teacher" value="teacher">Teacher</option>
-        <option name="student" value="student">Student</option>
-      </select></td>
-        </tr>
-
-        <tr><td><br></td></tr>
-        <tr>
-          <td></td>
-          <td><input type="submit" name="signup" value="Signup"></td>
-        </tr>
-
-      </table>
-    </form>--><!-- Old version ended -->
-
+    
     <form method="post" class="form-horizontal col-md-6 col-md-offset-3">
 
       <div class="form-group">
@@ -173,9 +137,7 @@ include('connect.php');
             <label>
           <input type="radio" name="type" id="optionsRadios1" value="teacher"> Teacher
         </label>
-        <!-- <label>
-          <input type="radio" name="type" id="optionsRadios1" value="admin"> Admin
-        </label> -->
+        
       </div>
       </div>
 
