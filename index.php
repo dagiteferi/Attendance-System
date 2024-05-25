@@ -153,6 +153,6 @@ if(isset($error_msg))
         </div>
     </div>
 
-</center>
+
 </body>
 </html>

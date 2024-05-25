@@ -56,7 +56,7 @@
                         <input type="email" name="email"  class="input" id="input1" placeholder="your email" required/>
                       
                         <!-- <input type="submit" class="submit-btn" value="Go" name="reset" /> -->
-                        <button type="submit" class="submit-btn" name="reset" value="Go" >reset</button>
+                        <button type="submit" class="submit-btn" name="reset" value="Go" >Go</button>
                     </form>
                     
                 </div>
