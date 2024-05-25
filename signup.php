@@ -48,30 +48,18 @@ include('connect.php');
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
-<meta charset="UTF-8">
-  
-  <link rel="stylesheet" type="text/css" href="css/main.css">
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-   
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
-   
-  <link rel="stylesheet" href="styles.css" >
-   
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-  <!--for the fabicons-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--for the fabicons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <!--for my nav bar toggler works and background Change when scrol -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="javaScript/scripts.js"></script><!--my main JavaScript File Exernal JS-->
     <!--to add a font-->  
    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Login</title>
 </head>
 <body>
 
@@ -94,11 +82,11 @@ include('connect.php');
       </div>
     </div>
   </nav>
-<center>
 
-<div class="content">
 
-  <div class="row">
+<!-- <div class="content">
+
+  <div class="row"> -->
     <?php
     if(isset($success_msg)) echo $success_msg;
     if(isset($error_msg)) echo $error_msg;
@@ -129,7 +117,7 @@ include('connect.php');
                     
                 </form>
                 <a href="index.php">
-                    <button type="button" class="btn">I've an account</button>
+                    <button type="button" class="btn" style="margin-top: 20px;">I've an account</button>
                 </a>
                 
             </div>
