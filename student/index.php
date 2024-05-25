@@ -36,10 +36,11 @@ if($_SESSION['name']!='oasis')
         <span></span>
       </button>
       <div class="navbar-menu">
-        <a href="index.html">Home</a>
+        <a href="index.php">Home</a>
        <a href="report.php">My Report</a>
       <a href="account.php">My Account</a>
       <a href="../logout.php">Logout</a>
+      <a href="students.php">Students</a>
       </div>
     </div>
   </nav>
@@ -47,14 +48,27 @@ if($_SESSION['name']!='oasis')
   <section id="home">
     <div class="inner-width">
       <div class="content">
-        <h1 style="font-size: 40px;">WelCome, </h1>
-      
+      <div class="front">
         
-        
-        <div class="buttons">
-            <a href="permission.php" target="_blank" >ask permission</a>
-
-            <a href="scane.php"  target="_blank"   >scan the qr code</a>
+  
+  <div class="front-child1">
+    <h1 style = "font-size:35px">
+    QR-Attendance-System
+      <span class=""> Be attentive and be regular :)</span>
+    </h1>
+    <div class="front-child1">
+    <div class="buttons">
+    
+    <a href="permission.php" target="_blank" >ask permission</a>
+   
+    
+    <a href="scane.php"  target="_blank"   >scan the qr code</a>
+    
+    </div>
+    </div>
+  </div>
+  
+</div>
             
         </div>
       </div>
