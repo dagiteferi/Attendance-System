@@ -73,9 +73,10 @@ if($_SESSION['name']!='oasis')
         </div>
       </div>
     </div> 
+</section>
 <!-- Menus ended -->
 
-<center>
+
 
 <!-- Content, Tables, Forms, Texts, Images started -->
 <div class="row">

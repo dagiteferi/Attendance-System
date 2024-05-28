@@ -21,6 +21,7 @@ if(isset($_POST['code'])){
 <head>
     <script src="https://cdn.rawgit.com/cozmo/jsQR/1.0.1/dist/jsQR.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
 </head>
 <body>
     <video id="qr-video" autoplay playsinline></video>
