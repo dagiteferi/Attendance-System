@@ -1,69 +1,79 @@
-<?php
-if(isset($_POST['code'])){
-    // Include your database connection file
-    include 'db_connection.php';
-
-    // Get the QR code data from the AJAX request
-    $code = $_POST['code'];
-
-    // TODO: Validate the QR code data
-
-    // TODO: Extract the student's name, id, and email from the QR code data
-
-    // TODO: Insert the attendance record into the database
-
-    echo "Attendance registered successfully!";
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://cdn.rawgit.com/cozmo/jsQR/1.0.1/dist/jsQR.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        #reader {
+            display: block;
+            margin: 10px auto;
+        }
+        .input-area {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        #codeInput {
+            flex-grow: 1;
+        }
+        button {
+            background-color: #48dbfb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* Responsive styling */
+        @media only screen and (max-width: 600px) {
+            #reader {
+                width: 100%;
+                height: auto;
+            }
+            .input-area {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <script src="https://raw.githack.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
 </head>
 <body>
-    <video id="qr-video" autoplay playsinline></video>
-    <canvas id="qr-canvas" style="display: none;"></canvas>
-    <script type="text/javascript">
-        var video = document.getElementById("qr-video");
-        var canvasElement = document.getElementById("qr-canvas");
-        var canvas = canvasElement.getContext("2d");
+    <div id="reader" style="width:300px;height:300px"></div>
+    <div class="input-area">
+        <input type="text" id="codeInput" placeholder="Enter 4-digit number">
+        <button onclick="checkCode()">Submit</button>
+    </div>
+    <p id="status"></p>
 
-        function tick() {
-    if (video.readyState === video.HAVE_ENOUGH_DATA) {
-        canvasElement.hidden = false;
-
-        canvasElement.height = video.videoHeight;
-        canvasElement.width = video.videoWidth;
-        canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
-        var imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
-        var code = jsQR(imageData.data, imageData.width, imageData.height);
-        if (code) {
-            console.log("Found QR code", code.data);
-            $.ajax({
-                url: window.location.href, // Current page
-                type: 'post',
-                data: { 'code': code.data },
-                success: function(data) {
-                    console.log(data);
-                },
-                error: function(xhr, status, error) {
-                    console.error(error);
-                }
-            });
+    <script>
+        function onScanSuccess(decodedText, decodedResult) {
+            // Handle on success condition with the decoded text or result.
+            console.log(`Scan result: ${decodedText}`, decodedResult);
+            document.getElementById('codeInput').value = decodedText;
         }
-    }
-    requestAnimationFrame(tick);
-}
 
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", { fps: 10, qrbox: 250 });
+        html5QrcodeScanner.render(onScanSuccess);
 
-        navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
-            video.srcObject = stream;
-            video.play();
-            requestAnimationFrame(tick);
-        });
+        function checkCode() {
+            var scannedCode = document.getElementById('codeInput').value;
+            var teacherCode = '1234'; // Replace with the actual code given by the teacher
+
+            if (scannedCode === teacherCode) {
+                document.getElementById('status').textContent = 'Your attendance is registered!';
+            } else {
+                document.getElementById('status').textContent = 'Incorrect code. Please try again.';
+            }
+        }
     </script>
 </body>
 </html>
