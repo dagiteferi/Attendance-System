@@ -661,3 +661,53 @@ margin-top:  8px;
             opacity: 1;
           }
         }
+      }}}}
+
+
+      .body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
+    }
+    #reader {
+        display: block;
+        margin: 10px auto;
+        width: 80vw; /* Adjust as needed */
+        height: 80vw; /* Adjust as needed */
+    }
+    .sinput-area {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    #codeInput {
+        flex-grow: 1;
+    }
+    .sbutton {
+        background-color: #48dbfb;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .reader {
+            width: 100vw;
+            height: 1000vw;
+        }
+        .input-area {
+            flex-direction: column;
+        }
+    }
+    @media only screen and (max-width: 667px) {
+        .reader {
+            width: 100vw;
+            height: 1000vw;
+        }}

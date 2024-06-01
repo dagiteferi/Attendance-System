@@ -2,7 +2,7 @@
 <html>
 <head>
     <style>
-         body {
+        body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
@@ -47,15 +47,15 @@
     <div class="form-container">
         <h2>QR Code Generator</h2>
         <input type="text" id="courseName" placeholder="Enter Course Name">
-        <input type="text" id="randomNumber" placeholder="Enter 4-digit Number">
+        <input type="text" id="randomNumber" placeholder="Enter 4-digit Number" onpaste="return false;">
         <button onclick="generateQRCode()">Generate QR Code</button>
         <div id="qrcode"></div>
         <button id="zoomButton" style="display: none;" onclick="zoomQRCode()">Zoom</button>
     </div>
     <script type="text/javascript">
         function generateQRCode() {
-           // Get the current date and time in Ethiopia
-           var now = new Date();
+            // Get the current date and time in Ethiopia
+            var now = new Date();
             var utc = now.getTime() + (now.getTimezoneOffset() * 60000);
             var ethiopiaTime = new Date(utc + (3600000*3)); // Ethiopia is 3 hours ahead of UTC
 
@@ -69,6 +69,9 @@
             // Data to be encoded
             var data = courseName + ' ' + randomNumber + ' ' + datetime;
 
+            // Clear the previous QR code
+            document.getElementById('qrcode').innerHTML = "";
+
             // Generate the QR code
             var qrcode = new QRCode(document.getElementById("qrcode"), {
                 text: data,
@@ -78,18 +81,14 @@
 
             // Show the zoom button
             document.getElementById('zoomButton').style.display = 'block';
+
+            // Make the QR code and random number valid for a limited time
+            setTimeout(function() {
+                document.getElementById('qrcode').innerHTML = "";
+                document.getElementById('zoomButton').style.display = 'none';
+            }, 600000); // QR code and random number are valid for 10 minutes
         }
 
-        function zoomQRCode() {
-            // Open the QR code in a new tab
-            var dataUrl = document.querySelector('#qrcode canvas').toDataURL();
-            var win = window.open();
-            win.document.write('<img src="' + dataUrl + '"/>');
-        
-
-            // Show the zoom button
-            document.getElementById('zoomButton').style.display = 'block';
-        }
 
         function zoomQRCode() {
             // Open the QR code in a new tab
