@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -103,4 +105,54 @@
       }
     </script>
   </body>
+  <!-- 10 min restrection -->
+
+  <?php
+// Connect to the database
+// $servername = "localhost";
+// $username = "username";
+// $password = "password";
+// $dbname = "myDB";
+
+// $conn = new mysqli($servername, $username, $password, $dbname);
+
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// }
+
+// Get the scanned code and student ID from the POST request
+// $scannedCode = $_POST['scannedCode'];
+// $studentId = $_POST['studentId']; // Replace with actual student ID
+
+// Get the current time
+// $currentTime = time();
+
+// Get the time of the last successful scan for this student
+// $sql = "SELECT last_scan FROM Attendance WHERE student_id = ?";
+// $stmt = $conn->prepare($sql);
+// $stmt->bind_param("i", $studentId);
+// $stmt->execute();
+// $result = $stmt->get_result();
+// $row = $result->fetch_assoc();
+// $lastScan = $row['last_scan'];
+
+// Check if 10 minutes have passed since the last successful scan
+// if ($currentTime - $lastScan >= 600) {
+    // If so, register the attendance and update the last scan time
+//     $sql = "UPDATE Attendance SET last_scan = ? WHERE student_id = ?";
+//     $stmt = $conn->prepare($sql);
+//     $stmt->bind_param("ii", $currentTime, $studentId);
+//     if ($stmt->execute()) {
+//         echo "Your attendance is registered!";
+//     } else {
+//         echo "Error: " . $sql . "<br>" . $conn->error;
+//     }
+// } else {
+//     echo "You can only scan once every 10 minutes. Please try again later.";
+// }
+
+// $conn->close();
+// ?>
+
+
 </html>
