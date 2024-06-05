@@ -1,8 +1,3 @@
-
-<?php include('connect.php');?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -75,37 +70,43 @@
       var html5QrcodeScanner = new Html5QrcodeScanner(
         "reader", { fps: 10, qrbox: 250 });
 
-      function onScanSuccess(decodedText, decodedResult) {
-        // Handle on success condition with the decoded text or result.
-        console.log(`Scan result: ${decodedText}`, decodedResult);
+        function onScanSuccess(decodedText, decodedResult) {
+  // Handle on success condition with the decoded text or result.
+  console.log(`Scan result: ${decodedText}`, decodedResult);
 
-        // Extract the 4-digit number and the timestamp from the decoded text
-        var parts = decodedText.split(' ');
-        var scannedCode = parts[1]; // Assuming the 4-digit number is the second part of the decoded text
-        var timestamp = new Date(parts[2]); // Assuming the timestamp is the third part of the decoded text
+  // Extract the 4-digit number and the timestamp from the decoded text
+  var parts = decodedText.split(' ');
+  var scannedCode = parts[1]; // Assuming the 4-digit number is the second part of the decoded text
+  var timestamp = new Date(parts[2]); // Assuming the timestamp is the third part of the decoded text
 
-        // Check if more than 10 minutes have passed
-        var now = new Date();
-        var difference = now.getTime() - timestamp.getTime(); // Difference in milliseconds
-        if (difference > 10 * 60 * 1000) { // More than 10 minutes
-          document.getElementById('status').textContent = 'Invalid QR code. Please try again.';
-          return;
-        }
+  // Check if more than 10 minutes have passed
+  var now = new Date();
+  var difference = now.getTime() - timestamp.getTime(); // Difference in milliseconds
+  if (difference > 10 * 60 * 1000) { // More than 10 minutes
+    document.getElementById('status').textContent = 'Invalid QR code. Please try again.';
+    return;
+  }
 
-        if (scannedCode === teacherCode) {
-          document.getElementById('status').textContent = 'Your attendance is registered!';
-           // Send a request to the server-side script to save the attendance data
-           var xhr = new XMLHttpRequest();
-          xhr.open("POST", "scan.php", true);
-          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-          xhr.send("studentId=" + encodeURIComponent(studentId) + "&scannedCode=" + encodeURIComponent(scannedCode));
-        } else {
-          document.getElementById('status').textContent = 'Incorrect code. Please try again.';
-        } 
+  if (scannedCode === teacherCode) {
+      // Clear everything
+      document.body.innerHTML = "";
 
-        // Stop scanning
-        html5QrcodeScanner.clear();
-      }
+      // Create a new paragraph element
+      var p = document.createElement("p");
+
+      // Set the text of the paragraph element
+      p.textContent = 'Your attendance is registered!';
+
+      // Add the paragraph element to the body
+      document.body.appendChild(p);
+  } else {
+      document.getElementById('status').textContent = 'Incorrect code. Please try again.';
+  }
+  html5QrcodeScanner.clear();
+
+  // Your existing code goes here...
+}
+
 
       function startScanning() {
         teacherCode = document.getElementById('teacherCodeInput').value;
@@ -113,23 +114,12 @@
       }
     </script>
   </body>
-<<<<<<< HEAD
-  <?php
-// Check if the request method is POST
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get the scanned code and student ID from the POST request
-    $scannedCode = $_POST['scannedCode'];
-    $studentId = $_POST['studentId']; // This now comes from the POST request
-
-    // Your existing PHP code here
-}
-?>
-
+</html>
 
 
   <!-- 10 min restrection -->
 
-<?php
+  <?php
 // Connect to the database
 // $servername = "localhost";
 // $username = "username";
@@ -177,6 +167,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // ?>
 
 
-=======
->>>>>>> parent of e46eaf0 (10 min restiriction)
 </html>

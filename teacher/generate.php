@@ -2,7 +2,7 @@
 <html>
 <head>
     <style>
-        body {
+         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
@@ -53,6 +53,8 @@
         <button id="zoomButton" style="display: none;" onclick="zoomQRCode()">Zoom</button>
     </div>
     <script type="text/javascript">
+        var win; // Declare the window variable globally
+
         function generateQRCode() {
             // Get the current date and time in Ethiopia
             var now = new Date();
@@ -86,16 +88,22 @@
             setTimeout(function() {
                 document.getElementById('qrcode').innerHTML = "";
                 document.getElementById('zoomButton').style.display = 'none';
-            }, 600000); // QR code and random number are valid for 10 minutes
+                if (win) win.close(); // Close the zoomed QR code window
+            }, 600000); // QR code and random number are valid for 1 minute
         }
-
 
         function zoomQRCode() {
-            // Open the QR code in a new tab
-            var dataUrl = document.querySelector('#qrcode canvas').toDataURL();
-            var win = window.open();
-            win.document.write('<style>body {display: flex; justify-content: center; align-items: center; height: 100vh;}</style><img src="' + dataUrl + '" style="width: 30%; height: auto;"/>');
-        }
+    // Open the QR code in a new tab
+    var dataUrl = document.querySelector('#qrcode canvas').toDataURL();
+    win = window.open();
+    win.document.write('<style>body {display: flex; justify-content: center; align-items: center; height: 100vh;}</style><img src="' + dataUrl + '" style="width: 30%; height: auto;"/>');
+
+    // Set a timer to close the new tab after 1 minute
+    win.setTimeout(function() {
+        win.close();
+    }, 600000); // 60000 milliseconds = 1 minute
+}
+
     </script>
 </body>
 </html>
