@@ -1,4 +1,6 @@
+
 <?php include('connect.php');?>
+
 
 
 <!DOCTYPE html>
@@ -111,6 +113,7 @@
       }
     </script>
   </body>
+<<<<<<< HEAD
   <?php
 // Check if the request method is POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -174,4 +177,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // ?>
 
 
+=======
+>>>>>>> parent of e46eaf0 (10 min restiriction)
 </html>
