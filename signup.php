@@ -21,8 +21,8 @@ include('connect.php');
         if(empty($_POST['fname'])){
            throw new Exception("Full name cann't be empty.");
         }
-        if(empty($_POST['phone'])){
-           throw new Exception("Phone number cann't be empty.");
+        if(empty($_POST['id'])){
+           throw new Exception("id number cann't be empty.");
         }
         if(empty($_POST['type'])){
            throw new Exception("User type cann't be empty.");
@@ -32,6 +32,11 @@ include('connect.php');
         $stmt->bind_param("ssssss", $_POST['uname'], $_POST['pass'], $_POST['email'], $_POST['fname'], $_POST['phone'], $_POST['type']);
 
         if ($stmt->execute()) {
+           // Start the session and store the student's ID and name in session variables
+           session_start();
+            $_SESSION['loggedin'] = true;
+            $_SESSION['studentId'] = $stmt->insert_id; // The ID of the newly inserted record
+            $_SESSION['studentName'] = $_POST['fname'];
             $success_msg = "Signup Successfully!";
         } else {
             throw new Exception("Error: " . $stmt->error);
@@ -44,6 +49,7 @@ include('connect.php');
   }
 
 ?>
+
 
 
 <!DOCTYPE html>
@@ -104,7 +110,7 @@ include('connect.php');
                     
                     <input type="password" name="pass"  class="input" id="input1" placeholder="choose a strong password" />
                     <input type="text" name="fname"  class="input" id="input1" placeholder="your full name" />
-                    <input type="text" name="phone"  class="input" id="input1" placeholder="your id number" />
+                    <input type="text" name="id"  class="input" id="input1" placeholder="your id number" />
                     <div class="form-group" class="radio">
                         <label for="input1" class="">Role</label>
                         
@@ -124,7 +130,7 @@ include('connect.php');
         </div>
     </div>
 </div>
-</center>
+
 
 </body>
 </html>

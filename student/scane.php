@@ -1,3 +1,4 @@
+<?php include('connect.php');?>
 
 
 <!DOCTYPE html>
@@ -91,9 +92,14 @@
 
         if (scannedCode === teacherCode) {
           document.getElementById('status').textContent = 'Your attendance is registered!';
+           // Send a request to the server-side script to save the attendance data
+           var xhr = new XMLHttpRequest();
+          xhr.open("POST", "scan.php", true);
+          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+          xhr.send("studentId=" + encodeURIComponent(studentId) + "&scannedCode=" + encodeURIComponent(scannedCode));
         } else {
           document.getElementById('status').textContent = 'Incorrect code. Please try again.';
-        }
+        } 
 
         // Stop scanning
         html5QrcodeScanner.clear();
@@ -105,9 +111,22 @@
       }
     </script>
   </body>
+  <?php
+// Check if the request method is POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get the scanned code and student ID from the POST request
+    $scannedCode = $_POST['scannedCode'];
+    $studentId = $_POST['studentId']; // This now comes from the POST request
+
+    // Your existing PHP code here
+}
+?>
+
+
+
   <!-- 10 min restrection -->
 
-  <?php
+<?php
 // Connect to the database
 // $servername = "localhost";
 // $username = "username";
