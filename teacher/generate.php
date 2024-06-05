@@ -84,17 +84,16 @@
 
             // Make the QR code and random number valid for a limited time
             setTimeout(function() {
-        document.getElementById('qrcode').innerHTML = "";
-        document.getElementById('zoomButton').style.display = 'none';
-        if (win) win.close(); // Close the zoomed QR code window
-    }, 600000 ); // QR code and random number are valid for 10 minutes
+                document.getElementById('qrcode').innerHTML = "";
+                document.getElementById('zoomButton').style.display = 'none';
+            }, 600000); // QR code and random number are valid for 10 minutes
         }
 
 
         function zoomQRCode() {
             // Open the QR code in a new tab
             var dataUrl = document.querySelector('#qrcode canvas').toDataURL();
-            win = window.open();
+            var win = window.open();
             win.document.write('<style>body {display: flex; justify-content: center; align-items: center; height: 100vh;}</style><img src="' + dataUrl + '" style="width: 30%; height: auto;"/>');
         }
     </script>
