@@ -1,12 +1,15 @@
 <?php
 
 ob_start();
-session_start();
 
-if($_SESSION['name']!='oasis')
-{
+session_start();
+if(!isset($_SESSION['name']) || empty($_SESSION['name'])) {
   header('location: ../index.php');
+  exit();
 }
+
+
+
 ?>
 
 
@@ -87,6 +90,14 @@ if($_SESSION['name']!='oasis')
   </div>
 
 </div>
+<?php
+// if (isset($_SESSION['name']) && isset($_SESSION['id'])) {
+//   echo "<p>Name: " . htmlspecialchars($_SESSION['name']) . "</p>";
+//   echo "<p>ID: " . htmlspecialchars($_SESSION['id']) . "</p>";
+// } else {
+//   echo "<p>Error: Session data is missing or invalid.</p>";
+// }
+?>
 
 
 </body>

@@ -3,8 +3,7 @@
 ob_start();
 session_start();
 
-if($_SESSION['name']!='oasis')
-{
+if(!isset($_SESSION['name']) || empty($_SESSION['name'])) {
   header('location: ../index.php');
 }
 ?>

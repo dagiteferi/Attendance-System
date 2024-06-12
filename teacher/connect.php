@@ -1,6 +1,14 @@
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "attsystem";
 
-mysql_connect('localhost','root','') or die('Cannot connect to server');
-mysql_select_db('attsystem') or die ('Cannot found database');
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 ?>
