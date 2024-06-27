@@ -148,17 +148,19 @@ if (isset($_SESSION['name']) && isset($_SESSION['id']) && isset($_SESSION['cours
 
         // Send the data to the server
         $.ajax({
-          url: './register-attendance.php', // Adjusted path
+          url: './register_attendance.php', // Adjust the path if necessary
           type: 'post',
           data: {
             studentId: studentId,
             courseName: courseName
           },
           success: function(response) {
-            console.log(response);
+            console.log(response); // Log the response (optional)
+            // You can also display a success message to the user here
           },
           error: function(jqXHR, textStatus, errorThrown) {
-            console.log(textStatus, errorThrown);
+            console.log(textStatus, errorThrown); // Log any errors (optional)
+            // Display an error message to the user if needed
           }
         });
       } else {
