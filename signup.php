@@ -1,5 +1,5 @@
 <?php
-include('connect.php');
+include('connect.php'); // connect to DB
 
 if (isset($_POST['signup'])) {
   if (empty($_POST['email'])) {
@@ -45,7 +45,7 @@ if (isset($_POST['signup'])) {
   if ($stmtAdmin->execute() && $stmtStudent->execute()) {
     session_start();
     $_SESSION['loggedin'] = true;
-    $_SESSION['studentId'] = $stmtStudent->insert_id; // The ID of the newly inserted record
+    $_SESSION['studentId'] = $stmtStudent->insert_id; // save the id as a session
     $_SESSION['studentName'] = $_POST['fname'];
     $success_msg = "Signup Successfully!";
   } else {
@@ -74,7 +74,7 @@ if (isset($_POST['signup'])) {
   <!--to add a font-->
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
-  <title>Login</title>
+  <title>signup</title>
 </head>
 
 <body>
@@ -91,17 +91,13 @@ if (isset($_POST['signup'])) {
       <div class="navbar-menu">
         <a href="signup.php">Home</a>
         <a href="signup.php">About</a>
-        <a href="signup.php">Services</a><!--move to home-pagee Services section-->
+        <a href="signup.php">Services</a>
 
-        <a href="signup.php">Contact</a><!--move to home-pagee Contact section-->
+        <a href="signup.php">Contact</a>
       </div>
     </div>
   </nav>
 
-
-  <!-- <div class="content">
-
-  <div class="row"> -->
   <?php
   if (isset($success_msg)) echo $success_msg;
   if (isset($error_msg)) echo $error_msg;

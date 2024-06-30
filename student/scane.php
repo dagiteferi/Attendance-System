@@ -1,14 +1,6 @@
 <?php
 session_start(); // Start the session
 
-// Check if the name and ID are set in the session
-// if (isset($_SESSION['name']) && isset($_SESSION['id']) && isset($_SESSION['courseName'])) {
-//   echo "Name: " . $_SESSION['name'] . "<br>";
-//   echo "ID: " . $_SESSION['id'] . "<br>";
-//   echo "courseName:" . $_SESSION['courseName'];
-// } else {
-//   echo "No session data found.";
-// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +15,6 @@ session_start(); // Start the session
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
@@ -85,6 +76,7 @@ session_start(); // Start the session
     }
   }
 </style>
+<!-- using webcam or camera interact with qr code . used to include Html5QrcodeScanner-->
 <script src="https://raw.githack.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
 </head>
 
@@ -101,16 +93,17 @@ session_start(); // Start the session
   </div>
 
   <script>
+    // get id name curese name from the session (login process and teacher genarete the qr code )
     var studentId = "<?php echo $_SESSION['id']; ?>";
     var studentName = "<?php echo $_SESSION['name']; ?>";
     var courseName = "<?php echo $_SESSION['courseName']; ?>";
   </script>
 
   <script>
-    var teacherCode; // Declare teacherCode as a global variable
+    var teacherCode;
     var html5QrcodeScanner = new Html5QrcodeScanner("reader", {
-      fps: 10,
-      qrbox: 250
+      fps: 10, // Frames per second( scanner checks for QR codes)
+      qrbox: 250 //scanning area (where the QR code should)
     });
 
 
@@ -221,7 +214,7 @@ session_start(); // Start the session
 
       // Send the data to the server
       $.ajax({
-        url: './register-attendance.php', // Adjust this path if necessary
+        url: './register-attendance.php',
         type: 'post',
         data: {
           studentId: studentId,

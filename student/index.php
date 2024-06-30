@@ -1,6 +1,6 @@
 <?php
 
-ob_start();
+ob_start(); //capture output before sent to the browser.
 
 session_start();
 if (!isset($_SESSION['name']) || empty($_SESSION['name'])) {

@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_POST['login'])) {
-  function test_input($data)
+  function test_input($data) // validation 
   {
     $data = trim($data);
     $data = stripslashes($data);
@@ -24,7 +24,7 @@ if (isset($_POST['login'])) {
       throw new Exception("Password is required!");
     }
 
-    include('connect.php');
+    include('connect.php'); // Db connection 
 
     $stmt = $conn->prepare("SELECT * FROM admininfo WHERE username=? AND password=?");
     $stmt->bind_param("ss", $_POST['username'], $_POST['password']);
@@ -33,7 +33,7 @@ if (isset($_POST['login'])) {
 
     if ($result->num_rows > 0) {
       $data = $result->fetch_assoc();
-      $_SESSION['name'] = $data['username'];
+      $_SESSION['name'] = $data['username']; // save username as a session 
       $type = $data['type'];
 
       if ($type == 'teacher') {
@@ -46,7 +46,7 @@ if (isset($_POST['login'])) {
 
         if ($resultStudent->num_rows > 0) {
           $dataStudent = $resultStudent->fetch_assoc();
-          $_SESSION['id'] = $dataStudent['st_id']; // now you can access the user's ID
+          $_SESSION['id'] = $dataStudent['st_id']; // saves the user's ID as a session 
         } else {
           throw new Exception("Student ID not found.");
         }

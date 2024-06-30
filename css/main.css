@@ -1,4 +1,4 @@
-/*Created By DAGMAWI TEFERI */
+
 *{
   margin: 0;
   padding: 0;
@@ -47,9 +47,10 @@ html{
 }
 
 .logo{/*Logo */
-  width: 44px;
+  width: 64px;
   height: 32px;
-  background-image: url(../images/white-logo.png);/*simple logo fron google*/
+  background-image: url(../img/logo.png);/*simple logo fron google*/
+  
   background-size: contain;
 }
 
@@ -91,7 +92,7 @@ html{
 }
 
 .sticky .logo{
-  background-image: url(../images/black-logo.png);/*new logo for sticky */
+  background-image: url(../img/logo.png);/*new logo for sticky */
 }
 
 .sticky .navbar-menu a{

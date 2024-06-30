@@ -6,4 +6,3 @@ $conn = new mysqli('localhost', 'root', '', 'attsystem');
 if ($conn->connect_error) {
     die("Connection failed: " . connect_error());
 }
-?>

@@ -89,7 +89,10 @@ include('connect.php');
         while ($dat = $result->fetch_assoc()) {
         ?>
           <strong>
-            <p style="text-align: left;">Hi there!<br>You requested for a password recovery. You may <a href="index.php">Login here</a> and enter this key as your password to login. Recovery key: <mark><?php echo $dat['password']; ?></mark><br>Regards,<br>Online Attendance Management System 1.0</p>
+            <p style="text-align: left;">Hi there!<br>You requested for a password recovery. You may
+              <a href="index.php">Login here</a> and enter this key as your password to login. Recovery key: <mark style="background-color: #48dbfb;">
+                <?php echo $dat['password']; ?></mark><br>Regards,<br>Online Attendance Management System 1.0
+            </p>
           </strong>
     <?php
         }
