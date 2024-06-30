@@ -2,13 +2,13 @@
 session_start(); // Start the session
 
 // Check if the name and ID are set in the session
-if (isset($_SESSION['name']) && isset($_SESSION['id']) && isset($_SESSION['courseName'])) {
-  echo "Name: " . $_SESSION['name'] . "<br>";
-  echo "ID: " . $_SESSION['id'] . "<br>";
-  echo "courseName:" . $_SESSION['courseName'];
-} else {
-  echo "No session data found.";
-}
+// if (isset($_SESSION['name']) && isset($_SESSION['id']) && isset($_SESSION['courseName'])) {
+//   echo "Name: " . $_SESSION['name'] . "<br>";
+//   echo "ID: " . $_SESSION['id'] . "<br>";
+//   echo "courseName:" . $_SESSION['courseName'];
+// } else {
+//   echo "No session data found.";
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">

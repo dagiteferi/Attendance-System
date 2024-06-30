@@ -73,6 +73,7 @@ if (isset($_POST['signup'])) {
   <script src="javaScript/scripts.js"></script><!--my main JavaScript File Exernal JS-->
   <!--to add a font-->
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
   <title>Login</title>
 </head>
 
@@ -88,12 +89,11 @@ if (isset($_POST['signup'])) {
         <span></span>
       </button>
       <div class="navbar-menu">
-        <a href="index.html">Home</a>
-        <a href="index.html#about">About</a><!--move to home-pagee about section-->
-        <a href="index.html#service">Services</a><!--move to home-pagee Services section-->
-        <a href="index.html#education">Education</a><!--move to home-pagee Education section-->
-        <a href="index.html#work">Works</a><!--move to home-pagee Works section-->
-        <a href="index.html#contact">Contact</a><!--move to home-pagee Contact section-->
+        <a href="signup.php">Home</a>
+        <a href="signup.php">About</a>
+        <a href="signup.php">Services</a><!--move to home-pagee Services section-->
+
+        <a href="signup.php">Contact</a><!--move to home-pagee Contact section-->
       </div>
     </div>
   </nav>
@@ -134,14 +134,26 @@ if (isset($_POST['signup'])) {
 
           </form>
           <a href="index.php">
-            <button type="button" class="btn" style="margin-top: 20px;">I've an account</button>
+            <button type="button" class="btn" style="margin-top: -7px;">I've an account</button>
           </a>
 
         </div>
       </div>
     </div>
   </div>
+  <footer>
 
+    <div class="copyright">
+      &copy; 2024 | Created & Designed By <a href="#home">Dagmawi Teferi</a>
+    </div>
+    <div class="sm">
+      <a href="#/"><i class="fa fa-facebook" style="font-size:24px"></i></a>
+      <a href="#/"><i class="fa fa-instagram" style="font-size:24px"></i></a>
+      <a href="#/"><i class="fa fa-linkedin" style="font-size:24px"></i></a>
+      <a href="#"><i class="fa fa-telegram" style="font-size:24px"></i></a>
+      <a href="#"><i class="fa fa-github" style="font-size:24px"></i></a>
+    </div>
+  </footer>
 
 </body>
 

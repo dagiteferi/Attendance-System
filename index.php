@@ -82,6 +82,7 @@ if (isset($_POST['login'])) {
   <script src="javaScript/scripts.js"></script><!--my main JavaScript File Exernal JS-->
   <!--to add a font-->
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
   <title>Login</title>
 </head>
 
@@ -102,9 +103,9 @@ if (isset($_POST['login'])) {
       </button>
       <div class="navbar-menu">
         <a href="index.php">Home</a>
-        <a href="about.php">About</a>
-        <a href="service.php">Services</a>
-        <a href="contact.php">Contact</a>
+        <a href="index.php">About</a>
+        <a href="index.php">Services</a>
+        <a href="index.php">Contact</a>
 
 
       </div>
@@ -161,7 +162,19 @@ if (isset($_POST['login'])) {
     </div>
   </div>
 
+  <footer>
 
+    <div class="copyright">
+      &copy; 2024 | Created & Designed By <a href="#home">Dagmawi Teferi</a>
+    </div>
+    <div class="sm">
+      <a href="#/"><i class="fa fa-facebook" style="font-size:24px"></i></a>
+      <a href="#/"><i class="fa fa-instagram" style="font-size:24px"></i></a>
+      <a href="#/"><i class="fa fa-linkedin" style="font-size:24px"></i></a>
+      <a href="#"><i class="fa fa-telegram" style="font-size:24px"></i></a>
+      <a href="#"><i class="fa fa-github" style="font-size:24px"></i></a>
+    </div>
+  </footer>
 </body>
 
 </html>

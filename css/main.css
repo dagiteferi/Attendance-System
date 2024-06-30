@@ -711,3 +711,231 @@ margin-top:  8px;
             width: 100vw;
             height: 1000vw;
         }}
+
+
+        .step-main-cont1 {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 4rem;
+          text-align: center;
+        }
+        .select,
+        .operat,
+        .dri {
+          max-width: 130px;
+        }
+        .step-main-cont2 > * {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .step-main-cont2 {
+          display: flex;
+          align-items: center;
+        
+          gap: 2rem;
+          text-align: center;
+          margin: 0 auto 9rem;
+        }
+        .step-main-cont1 p {
+          font-size: 3rem;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+        .step-main-cont1 img {
+          max-width: 9rem;
+        }
+        .step-main-cont1 h1 {
+          margin: 1rem 0 0;
+          max-width: 750px;
+          font-size: 1.5rem;
+          font-family: "Roboto", sans-serif;
+          opacity: 0.79;
+          text-align: center;
+        }
+        .step1-cont h6,
+        .step2-cont h6,
+        .step3-cont h6 {
+          margin: 1rem;
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+        .step3-cont p {
+          max-width: 1060px;
+        }
+        .bg {
+          text-align: center;
+          display: inline-block;
+          position: absolute;
+          width: 104%;
+          left: -35px;
+          padding: 5%;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          color: white;
+          background-image: url(bg.png);
+          background-color: rgb(0 0 0);
+          background-blend-mode: luminosity;
+        }
+        .bg h4,
+        .bg p {
+          text-shadow: 2px 2px 4px rgb(0 0 0);
+        }
+        .bg h4 {
+          font-size: 2.7rem;
+          margin: 0;
+          max-width: 900px;
+          font-weight: 900;
+          font-family: Poppins, sans-serif;
+          line-height: 1;
+        }
+        .bg p {
+          margin: 14px 0 0;
+          font-size: 1.3rem;
+        }
+        .bg b {
+          color: #9ef1f1;
+        }
+        .bg div:nth-child(2) {
+          display: none;
+        }
+        .choose-us-cont {
+          margin-top: 34rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .choose-us-cont img {
+          width: 100%;
+        }
+        .choose-main-cont {
+          display: flex;
+          gap: 2rem;
+          max-width: 1375px;
+          justify-content: space-between;
+          width: 100%;
+          justify-content: space-between;
+          margin-top: 5rem;
+        }
+        .choose-cont1 {
+          flex: 45%;
+        }
+        .choose-cont1 p:nth-child(1) {
+          font-size: 1.6rem;
+          font-weight: 400;
+          margin: 0;
+        }
+        .choose-cont1 > :nth-child(3) {
+          max-width: 80%;
+          margin-top: 1rem;
+          margin-bottom: 3rem;
+        }
+        .choose-cont1 a {
+          text-decoration: none;
+          color: white;
+          font-weight: 900;
+          font-size: 1.3rem;
+          padding: 10px 3.5rem;
+          background: black;
+          transition: 0.3s;
+        }
+        .choose-cont1 a:hover {
+          box-shadow: 0 4px 15px #0000008a;
+        }
+        .choose-cont2 {
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+          flex: 27%;
+        }
+        .choose-cont2 > * {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+        .choose-cont2 img {
+          max-width: 100px;
+        }
+        .choose-cont2 h1 {
+          font-size: 1.4rem;
+          font-weight: 700;
+        }
+        @media screen and (max-width: 1200px) {
+          .bg h4 {
+            font-size: 2.4rem;
+            max-width: 80%;
+            margin-left: 1.7rem;
+          }
+          .bg p {
+            margin: 0 3rem;
+          }
+          @media screen and (max-width: 1045px) {
+            .choose-main-cont {
+              flex-direction: column;
+              align-items: center;
+              gap: 5rem;
+            }
+            .choose-cont1 {
+              max-width: 800px;
+              text-align: center;
+            }
+            .choose-cont1 p:nth-child(1) {
+              font-size: 1.9rem;
+            }
+            .choose-cont1 {
+              font-weight: 800;
+              margin-top: 10px;
+            }
+            .choose-cont1 > :nth-child(3) {
+              font-size: 1.3rem;
+              max-width: 90%;
+              display: inline-block;
+              font-weight: 100;
+            }
+            .choose-cont1 a {
+              white-space: nowrap;
+            }
+            .choose-cont2 {
+              max-width: 800px;
+            }
+            .choose-cont1 h1 {
+              font-weight: 900;
+            }
+            .choose-list-cont1 p {
+              font-size: 1.3rem;
+            }
+            @media screen and (max-width: 900px) {
+              
+              .step-main-cont2 {
+                flex-wrap: wrap;
+                justify-content: center;
+              }
+              .step-main-cont2 > * {
+                max-width: 550px;
+              }
+              .step1-cont h6,
+              .step2-cont h6,
+              .step3-cont h6 {
+                font-size: 1.7rem;
+              }
+              .step1-cont p,
+              .step2-cont p,
+              .step3-cont p {
+                font-size: 1.4rem;
+              }
+              .step-main-cont1 h1 {
+                font-size: 2rem;
+              }
+              .choose-us-cont {
+                  margin-top: 41rem;
+                }
+                .choose-main-cont {
+                  margin-top: 5vw;
+                }
+              }
+            }
+          }
